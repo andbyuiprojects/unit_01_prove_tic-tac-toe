@@ -8,6 +8,7 @@ namespace unit_01_prove_tictactoe
 {
     internal class Program
     {
+        //Main, runs the whole program.
         static void Main(string[] args)
         {
             List<string> board = NewBoard();
@@ -24,7 +25,7 @@ namespace unit_01_prove_tictactoe
             }
 
             DisplayBoard(board);
-            Console.WriteLine($"\nWell Played!\n");
+            Console.WriteLine("\nWell Played!\n");
 
 
         }
@@ -52,6 +53,7 @@ namespace unit_01_prove_tictactoe
             Console.WriteLine($"{board[6]} | {board[7]} | {board[8]}");
         }
 
+        //Gets the spot of where the user wants to go.
         static int PlayerMove(string playerOne)
         {
             Console.Write($"\n{playerOne}'s turn to pick a location (1-9)\n> ");
@@ -62,6 +64,7 @@ namespace unit_01_prove_tictactoe
             return choice;
         }
 
+        //Determines who the next player is.
         static string NextPlayer(string playerOne)
         {
             string nextPlayer = "x";
@@ -74,6 +77,8 @@ namespace unit_01_prove_tictactoe
             return nextPlayer;
         }
 
+
+        //Determines fi the game is over.
         static bool GameOver(List<string> board)
         {
             bool gameOver = false;
@@ -93,7 +98,7 @@ namespace unit_01_prove_tictactoe
             board[indexSpot] = playerOne;
         }
 
-        //checks to see if there is a winner (see modularization design tic-tac-toe, converted to C#)
+        //Checks to see if there is a winner. (see modularization design tic-tac-toe, converted to C# basically)
         static bool PlayerWin(List<string> board, string player)
         {
            bool playerWin = false;
